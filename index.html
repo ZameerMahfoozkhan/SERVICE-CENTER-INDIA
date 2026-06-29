@@ -24,7 +24,7 @@
       <a href="#why">Why Us</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <a href="tel:9120992012" class="header-cta" id="headerCallBtn">&#9742; Call Now</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu">&#9776;</button>
@@ -39,7 +39,7 @@
   <a href="#why">Why Us</a>
   <a href="#reviews">Reviews</a>
   <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
+  <a href="contact.html">Contact</a>
   <a href="tel:9120992012" class="mobile-phone-btn">&#9742; Call 9120992012</a>
 </div>
 
@@ -234,21 +234,24 @@
         <p>"Same day service as promised. The technician was very knowledgeable and fixed my LCD TV's motherboard issue quickly. Fair pricing too."</p>
         <div class="reviewer"><div class="reviewer-avatar">AV</div><div><div class="reviewer-name">Amit Verma</div><div class="reviewer-loc">Hazratganj, Lucknow</div></div></div>
       </div>
-      <div class="review-card" id="review4">
+      <div class="review-card hidden-review" id="review4">
         <div class="review-stars">★★★★★</div>
         <p>"TV screen had lines appearing on it. Called them and they sent a technician within 2 hours. Great experience, very polite and skilled!"</p>
         <div class="reviewer"><div class="reviewer-avatar">SM</div><div><div class="reviewer-name">Sneha Mishra</div><div class="reviewer-loc">Indira Nagar, Lucknow</div></div></div>
       </div>
-      <div class="review-card" id="review5">
+      <div class="review-card hidden-review" id="review5">
         <div class="review-stars">★★★★★</div>
         <p>"Very trustworthy service. No hidden charges and the repair was done right in front of me. Will definitely use again for any TV issues."</p>
         <div class="reviewer"><div class="reviewer-avatar">VG</div><div><div class="reviewer-name">Vikram Gupta</div><div class="reviewer-loc">Mahanagar, Lucknow</div></div></div>
       </div>
-      <div class="review-card" id="review6">
+      <div class="review-card hidden-review" id="review6">
         <div class="review-stars">★★★★★</div>
         <p>"Power issue in my TV was fixed in 30 minutes. The technician explained the problem clearly. Very happy with the service and pricing."</p>
         <div class="reviewer"><div class="reviewer-avatar">NK</div><div><div class="reviewer-name">Neha Kapoor</div><div class="reviewer-loc">Arya Nagar, Lucknow</div></div></div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <button class="btn btn-violet" id="seeAllReviewsBtn" onclick="toggleAllReviews()">See All Reviews ↓</button>
     </div>
   </div>
 </section>
@@ -357,16 +360,20 @@
           <a href="#why">Why Choose Us</a>
           <a href="#reviews">Customer Reviews</a>
           <a href="#faq">FAQ</a>
-          <a href="#contact">Contact Us</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
       <div>
-        <h4>Reach Us</h4>
+        <h4>Legal</h4>
+        <div class="footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+          <a href="refund-policy.html">Refund Policy</a>
+        </div>
+        <h4 style="margin-top:24px">Reach Us</h4>
         <div class="footer-links">
           <a href="tel:9120992012">&#9742; 9120992012</a>
           <a href="https://wa.me/919120992012" target="_blank">💬 WhatsApp Us</a>
-          <a>📍 Lucknow, UP</a>
-          <a>⏰ 9 AM – 8 PM (All Days)</a>
         </div>
       </div>
     </div>
@@ -421,12 +428,31 @@ var observer = new IntersectionObserver(function(entries) {
   });
 }, observerOptions);
 
-document.querySelectorAll('.service-card, .why-card, .process-card, .review-card').forEach(function(el) {
+document.querySelectorAll('.service-card, .why-card, .process-card, .review-card:not(.hidden-review)').forEach(function(el) {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)';
   observer.observe(el);
 });
+
+// Toggle all reviews
+function toggleAllReviews() {
+  var hidden = document.querySelectorAll('.hidden-review');
+  var btn = document.getElementById('seeAllReviewsBtn');
+  var isShowing = hidden[0].style.display === 'block';
+  hidden.forEach(function(el) {
+    if (isShowing) {
+      el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)';
+      setTimeout(function() { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50);
+    }
+  });
+  btn.textContent = isShowing ? 'See All Reviews ↓' : 'Show Less ↑';
+}
 </script>
 </body>
 </html>
