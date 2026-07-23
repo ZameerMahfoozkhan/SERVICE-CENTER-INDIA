@@ -20,6 +20,7 @@
     </a>
     <nav class="nav" id="desktopNav">
       <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
       <a href="#reviews">Reviews</a>
@@ -35,6 +36,7 @@
 <div class="mobile-nav" id="mobileNav">
   <button class="close-btn" id="closeNav" aria-label="Close menu">&times;</button>
   <a href="#home">Home</a>
+  <a href="#about">About</a>
   <a href="#services">Services</a>
   <a href="#why">Why Us</a>
   <a href="#reviews">Reviews</a>
@@ -210,8 +212,60 @@
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>Business Information & Contact</h2>
+      <div style="width:60px;height:3px;background:var(--accent);margin:14px auto;border-radius:2px;"></div>
+    </div>
+    <div class="about-grid">
+      <!-- Registered Entity Details -->
+      <div class="about-card">
+        <h3>Registered Entity Details</h3>
+        <ul class="entity-details">
+          <li><strong>Establishment Name:</strong> India Electronics Hub Service Centre</li>
+          <li><strong>Employer/Owner:</strong> Pankaj Kumar</li>
+          <li><strong>Business Type:</strong> Proprietorship</li>
+          <li><strong>GST Number:</strong> <span class="gst-text">09HMVPK3965C1ZE</span></li>
+          <li class="address-item"><strong>Registered Address:</strong><br>Bhikhi Sarai, Toromafi, Ayodhya,<br>Uttar Pradesh – 224204</li>
+          <li style="border-top:1px dotted var(--border); margin-top:16px; padding-top:16px;"><strong>Website:</strong> india-electronics-hub-service-centre.vercel.app</li>
+        </ul>
+      </div>
+
+      <!-- Request a Call Back -->
+      <div class="about-card form-card">
+        <h3>Request a Call Back</h3>
+        <form class="callback-form">
+          <input type="text" placeholder="Your Full Name" required>
+          <input type="tel" placeholder="Mobile Number" required>
+          <select required>
+            <option value="" disabled selected>Select Appliance</option>
+            <option value="led">LED TV</option>
+            <option value="lcd">LCD TV</option>
+            <option value="smart">Smart TV</option>
+            <option value="other">Other</option>
+          </select>
+          <button type="submit" class="submit-btn">Submit Service Request</button>
+        </form>
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div class="about-card">
+        <h3>Legal Disclaimer</h3>
+        <div class="disclaimer-text">
+          <p><strong>Business Identity:</strong> INDIA ELECTRONICS HUB SERVICE CENTRE is a customer-facing service brand operated by INDIA ELECTRONICS HUB SERVICE CENTRE, a proprietorship business providing professional electronic appliance repair services across India.</p>
+          <p><strong>Independent Provider:</strong> We are an independent, third-party home appliance service provider. We are not affiliated with, endorsed by, or authorized by any specific OEM manufacturers.</p>
+          <p><strong>Brand Independence:</strong> All brand names, trademarks, and logos displayed on this website are the property of their respective owners and are used for descriptive and identification purposes only.</p>
+          <p><strong>Entity Declaration:</strong> We strictly operate under our legally registered entity name — INDIA ELECTRONICS HUB SERVICE CENTRE.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- REVIEWS -->
-<section class="section section-alt" id="reviews">
+<section class="section" id="reviews">
   <div class="container">
     <div class="section-header">
       <div class="label">✦ Happy Customers</div>
@@ -257,7 +311,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="section" id="faq">
+<section class="section section-alt" id="faq">
   <div class="container">
     <div class="section-header">
       <div class="label">✦ Got Questions?</div>
@@ -294,7 +348,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="section section-alt" id="contact">
+<section class="section" id="contact">
   <div class="container">
     <div class="section-header">
       <div class="label">✦ Get In Touch</div>
@@ -358,6 +412,7 @@
         <h4>QUICK LINKS</h4>
         <div class="footer-links">
           <a href="index.html">Home</a>
+          <a href="index.html#about">About Us</a>
           <a href="index.html#services">Our Services</a>
           <a href="index.html#why">Why Choose Us</a>
           <a href="index.html#reviews">Customer Reviews</a>
